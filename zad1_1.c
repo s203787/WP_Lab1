@@ -2,15 +2,54 @@
 #include <stdbool.h>
 
 int main() {
-    int rok_urodzenia = 2005;
-    float wzrost = 3.14f;
-    char znak = 'A';
-    bool prawko = true;
+   int a;
+   int b;
+   int wynik;
+   char op;
 
-    printf("Zmienna 'rok_urodzenia' ma wartość: %d i zajmuje %zu bajty\n", rok_urodzenia, sizeof(rok_urodzenia));
-    printf("Zmienna 'wzrost' ma wartość: %.2f i zajmuje %zu bajty\n", wzrost, sizeof(wzrost));
-    printf("Zmienna 'znak' ma wartość: %c i zajmuje %zu bajty\n", znak, sizeof(znak));
-    printf("Zmienna 'prawko' ma wartość: %d (true=1, false=0) i zajmuje %zu bajt\n", prawko, sizeof(prawko));
+   printf("Podaj pierwszą liczbę:");
+   scanf("%d", &a);
+   printf("wczytano pierwszą liczbę:%d/n", a);
+
+   printf("Podaj drugą liczbę:");
+   scanf("%d", &b);
+   printf("wczytano drugą liczbę :%d/n", b);
+   
+   printf("Podaj operacje (+,-,*,/, %%):");
+   scanf(" %c", &op);
+
+   if ( op == '+') {
+    wynik= a+b;
+    printf("Wynik: %d + %d =%d/n", a,b,wynik);
+   }
+   else if ( op == '-') {
+    printf("Wynik: %d - %d = %d/n", a,b,wynik);
+   }
+
+   else if ( op == '*') {
+    printf("Wynik: %d * %d = %d/n", a,b,wynik);
+   }
+
+   else if ( op == '/') {
+    if (b == 0) {
+        printf ("blad: nie możsna dzielic przez zero\n");
+    }
+    else {
+        wynik = a/b;
+        printf ( "Wynik: %d/ %d = %d\n", a,b,wynik);
+    }
+   }
+
+   else if ( op == '%'){
+    
+        wynik = a % b;
+        printf( "Wynik: %d ", wynik);
+    }
+   
+else {
+    printf ("Blad: nie znany znak, dozwolne +,-,/,*,%%\n");
+}
 
     return 0;
+
 }
